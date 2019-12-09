@@ -47,7 +47,10 @@ while (length !== null) {
 
   //see if the variable is between 8 and 128
 
-  if (length === "8") {
+  // Convert strings
+  var lengthInteger = parseInt(length);
+
+  if (lengthInteger === 8) {
     test.thanks();
   }
 
