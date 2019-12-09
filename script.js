@@ -29,7 +29,8 @@ generateBtn.addEventListener("click", writePassword);
 // ===============================================================================
 var length;
 
-var object = {
+//
+var test = {
   thanks: function() {
     alert("Thanks yo");
   }
@@ -47,7 +48,7 @@ while (length !== null) {
   //see if the variable is between 8 and 128
 
   if (length === "8") {
-    object.thanks();
+    test.thanks();
   }
 
   //if yes, move on
