@@ -35,8 +35,16 @@ var test = {
     alert("Thanks yo. Moving on.");
   },
 
+  thanks2: function() {
+    alert("Thanks for the letter. Generating your password");
+  },
+
   tryAgain: function() {
     alert("Hey, you did something wrong. We said between 8 and 12");
+  },
+
+  tryAgain2: function() {
+    alert("Hey, you did something wrong. We said s, n, l or u.");
   }
 };
 
@@ -56,16 +64,35 @@ while (length !== null) {
 
   if (7 < lengthInteger && 127 > lengthInteger) {
     test.thanks();
+
+    //promt saying "Do you want the password to include special characters, numeric characters, lowercase characters or uppercase characters. Choose one: s, n, l or u."
+
+    var PasswordKind = prompt(
+      "Do you want the password to include special characters, numeric characters, lowercase characters or uppercase characters. Choose one: s, n, l or u."
+    );
+
+    if (
+      PasswordKind === "s" ||
+      PasswordKind === "n" ||
+      PasswordKind === "l" ||
+      PasswordKind === "u"
+    ) {
+      test.thanks2();
+    }
+    //if no, Say "Hey, you did something wrong. We said between 8 and 12"
+    else {
+      test.tryAgain2();
+    }
   }
   //if no, Say "Hey, you did something wrong. We said between 8 and 12"
   else {
     test.tryAgain();
+    //make them go back to the top, and start over
   }
-
   //End while loop
 }
 
-//promt saying "Do you want the password to include a. special characters b. numeric characters c. lowercase characters or d. uppercase characters. Choose one: a, b, c or d."
+//promt saying "Do you want the password to include special characters, numeric characters, lowercase characters or uppercase characters. Choose one: s, n, l or u."
 
 // Looping through each item in the array and logging a message to the console.
 
