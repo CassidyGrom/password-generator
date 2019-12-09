@@ -32,7 +32,11 @@ var length;
 //
 var test = {
   thanks: function() {
-    alert("Thanks yo");
+    alert("Thanks yo. Moving on.");
+  },
+
+  tryAgain: function() {
+    alert("Hey, you did something wrong. We said between 8 and 12");
   }
 };
 
@@ -43,20 +47,22 @@ while (length !== null) {
   var length = prompt(
     "Pick a number between 8 and 128, this will be the length of your Password."
   );
-  //store the answer in a variable somewhere, not sure how to do this
 
-  //see if the variable is between 8 and 128
-
-  // Convert strings
+  // Convert user's string into a real number
   var lengthInteger = parseInt(length);
+  alert("You said" + " " + lengthInteger);
 
-  if (lengthInteger === 8) {
+  //see if the variable is between 8 and 128, if yes, say thanks and move on
+
+  if (7 < lengthInteger && 127 > lengthInteger) {
     test.thanks();
   }
-
-  //if yes, move on
-
   //if no, Say "Hey, you did something wrong. We said between 8 and 12"
+  else {
+    test.tryAgain();
+  }
+
+  //End while loop
 }
 
 //promt saying "Do you want the password to include a. special characters b. numeric characters c. lowercase characters or d. uppercase characters. Choose one: a, b, c or d."
